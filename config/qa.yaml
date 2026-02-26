@@ -1,0 +1,21 @@
+base_url: https://jsonplaceholder.typicode.com
+timeout: 5
+
+headers:
+  Content-Type: application/json
+
+retry:
+  max_attempts: 2
+  backoff_factor: 2
+
+auth:
+  enabled: false
+  username: admin
+  password: password123
+
+auth:
+  enabled: false
+  login_endpoint: /login
+  username: admin
+  password: password123
+  token_key: token

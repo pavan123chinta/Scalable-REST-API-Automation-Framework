@@ -1,0 +1,29 @@
+environment: dev
+
+base_url: https://jsonplaceholder.typicode.com
+
+timeout: 10
+
+auth:
+  enabled: false
+  endpoint: /login
+
+retry:
+  max_attempts: 3
+  backoff_factor: 2
+
+headers:
+   Content-Type: application/json
+   User-Agent: Mozilla/5.0
+
+auth:
+  enabled: false
+  username: admin
+  password: password123
+
+auth:
+  enabled: false
+  login_endpoint: /login
+  username: admin
+  password: password123
+  token_key: token
