@@ -138,5 +138,5 @@ GitHub Actions workflow includes:
 
 ## Author
 
-Pavan Chinta
+**Pavan Chinta**  
 QA Automation Engineer | Python | API Testing | CI/CD
