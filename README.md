@@ -1,36 +1,32 @@
-Scalable API Automation Framework
+# Scalable REST API Automation Framework
 
-A production-ready, scalable API automation framework built using Python, Pytest, and Requests.
+Production-ready REST API automation framework built using Python, Pytest, and Requests.
 
-This framework supports:
+## Features
 
-Multi-environment execution (dev / qa)
+- Multi-environment execution (DEV / QA)
+- Retry mechanism with exponential backoff
+- SLA validation (response time checks)
+- Parallel test execution
+- GitHub Actions CI integration
+- Structured logging
+- Modular and reusable framework architecture
 
-Retry mechanism with exponential backoff
+---
 
-SLA validation (response time checks)
+## Tech Stack
 
-Parallel test execution
+- Python 3
+- Pytest
+- Requests
+- Pytest-xdist
+- GitHub Actions
 
-GitHub Actions CI integration
+---
 
-Structured logging
+## Project Structure
 
-Clean modular architecture
-
-Tech Stack
-
-Python 3.13
-
-Pytest
-
-Requests
-
-Pytest-xdist (Parallel execution)
-
-GitHub Actions (CI/CD)
-
-Project Structure
+```bash
 scalable_api_automation_framework/
 
 ├── clients/
@@ -49,83 +45,98 @@ scalable_api_automation_framework/
 ├── conftest.py
 ├── pytest.ini
 └── requirements.txt
-Run Tests (Environment Based)
-Run in DEV
+```
+
+---
+
+## Running Tests
+
+### Run in DEV Environment
+
+```bash
 pytest -s --env dev
-Run in QA
+```
+
+### Run in QA Environment
+
+```bash
 pytest -s --env qa
-Run in Parallel
+```
+
+### Run Tests in Parallel
+
+```bash
 pytest -n auto
+```
 
-Uses all available CPU cores via pytest-xdist.
+Uses `pytest-xdist` for parallel execution.
 
-Retry Logic
+---
 
-Configurable via YAML
+## Retry Logic
 
-Supports exponential backoff
-
-Handles transient API failures
-
-Environment-specific retry count
-
-Example configuration:
-
-retry:
-  max_attempts: 3
-  backoff_factor: 2
-SLA Validation (Response Time Check)
-
-Supports response time validation directly from test cases.
+- Configurable through YAML
+- Supports exponential backoff
+- Handles transient API failures
+- Environment-specific retry configuration
 
 Example:
 
+```yaml
+retry:
+  max_attempts: 3
+  backoff_factor: 2
+```
+
+---
+
+## SLA Validation
+
+Supports response-time validation directly in test cases.
+
+Example:
+
+```python
 response = api_client.get("/posts", sla_ms=1000)
+```
 
-Ensures the API responds within the defined SLA threshold (in milliseconds).
+Ensures APIs respond within defined SLA thresholds.
 
-CI/CD Integration
+---
 
-This project uses GitHub Actions for automated test execution.
+## CI/CD Integration
 
-Workflow includes:
+GitHub Actions workflow includes:
 
-Triggered on every push
+- Automatic execution on push
+- Dependency installation
+- Test execution
+- CI status reporting
 
-Installs dependencies
+---
 
-Runs test suite
+## Industry-Level Concepts Used
 
-Reports status in GitHub Actions tab
+- Modular framework design
+- Environment-based configuration
+- Session management
+- Retry handling
+- Parallel execution
+- CI/CD workflow integration
+- Structured logging
 
-Why This Project Is Industry-Ready
+---
 
-Clean modular architecture
+## Future Enhancements
 
-Environment configuration support
+- Allure Reporting
+- Docker Integration
+- API Mocking
+- Test Data Management Layer
 
-Session-based request handling
+---
 
-Retry with exponential backoff
-
-Parallel execution support
-
-CI/CD enabled
-
-Structured logging
-
-Future Enhancements
-
-Allure reporting
-
-Docker support
-
-API mocking integration
-
-Test data management layer
-
-Author
+## Author
 
 Pavan Chinta
-QA Automation Engineer
-Python | API Testing | CI/CD
+QA Automation Engineer | Python | API Testing | CI/CD
