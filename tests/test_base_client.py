@@ -1,3 +1,10 @@
+# TODO: Add negative test cases for error response codes
+# - 400 Bad Request
+# - 401 Unauthorized  
+# - 404 Not Found
+# - 500 Internal Server Error
+# Tracked in Issue #1
+
 from utils.schema_validator import SchemaValidator
 
 
